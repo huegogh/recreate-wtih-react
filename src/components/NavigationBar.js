@@ -26,20 +26,23 @@ export function NavigationBar() {
             <Navbar expand="lg">
                 <Navbar.Brand>
                     <Nav.Link as={Link} to='/'>
-                    Code Life
+                    &lt;huegogh /&gt; 
                     </Nav.Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Item>
-                            <Nav.Link as={Link}  to="/">Home</Nav.Link>
+                            <Nav.Link as={Link}  to="/">Multipage</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link as={Link}  to="/about">About</Nav.Link>
+                            <Nav.Link as={Link}  to="/about">Hotel</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link as={Link}  to="/contact">Contact</Nav.Link>
+                            <Nav.Link as={Link}  to="/contact">Restaurant</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link as={Link}  to="/contact">Business</Nav.Link>
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>

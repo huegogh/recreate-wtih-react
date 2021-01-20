@@ -1,17 +1,38 @@
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
-import backgroundImage from '../assets/night-view-1194159_1920.jpg';
+import backgroundImage from '../assets/logo192.png';
+import backgroundImageTwo from '../assets/night-view.jpg';
 
 const Styles = styled.div`
     .jumbo {
-        background: url(${backgroundImage}) no-repeat fixed bottom;
-        background-size: cover;
+        background:url(${backgroundImageTwo});
         color: #ccc;
         height: 200px;
         position: relative;
-        z-index: -2;
+        z-index: -3;
     }
+
+    .react-bg {
+        background: url(${backgroundImage}) no-repeat top;
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        top: 0;
+        right: 10%;
+        margin: 0 auto;
+        z-index: -1;
+        animation: rotation 10s infinite linear;
+    }
+
+    @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
 
     .overlay {
         background-color: #000;
@@ -29,10 +50,11 @@ export function Jumbo() {
     return (
         <Styles>
             <Jumbotron fluid className='jumbo'>
+                <div className='react-bg'></div>
                 <div className='overlay'></div>
                 <Container>
-                    <h1>Welcome</h1>
-                    <p>Learn to code from my YouTube videos</p>
+                    <h1>React Projects</h1>
+                    <p>Sites created with React, Bootstrap, and Stylized Components</p>
                 </Container>
             </Jumbotron>
         </Styles>
