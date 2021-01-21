@@ -8,7 +8,7 @@ const Styles = styled.div`
     .jumbo {
         background:url(${backgroundImageTwo});
         color: #ccc;
-        height: 200px;
+        height: 400px;
         position: relative;
         z-index: -3;
     }
@@ -18,7 +18,7 @@ const Styles = styled.div`
         position: absolute;
         height: 200px;
         width: 200px;
-        top: 0;
+        top: 10;
         right: 10%;
         margin: 0 auto;
         z-index: -1;
@@ -52,7 +52,7 @@ export function Jumbo() {
             <Jumbotron fluid className='jumbo'>
                 <div className='react-bg'></div>
                 <div className='overlay'></div>
-                <Container>
+                <Container className='mt-5'>
                     <h1>React Projects</h1>
                     <p>Sites created with React, Bootstrap, and Stylized Components</p>
                 </Container>
