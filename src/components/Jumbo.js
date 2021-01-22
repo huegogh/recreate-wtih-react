@@ -8,7 +8,7 @@ const Styles = styled.div`
     .jumbo {
         background:url(${backgroundImageTwo});
         color: #ccc;
-        height: 400px;
+        height: calc(100vh - 75px);
         position: relative;
         z-index: -3;
     }
@@ -48,7 +48,7 @@ const Styles = styled.div`
 
 export function Jumbo() {
     return (
-        <Styles>
+        <Styles className="mb-n5">
             <Jumbotron fluid className='jumbo'>
                 <div className='react-bg'></div>
                 <div className='overlay'></div>

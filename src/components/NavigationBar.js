@@ -23,7 +23,7 @@ const Styles = styled.div`
 export function NavigationBar(props) {
     return (
         <Styles>
-            <Navbar expand="lg">
+            <Navbar>
                 <Navbar.Brand>
                     <Nav.Link as={Link} to='/'>
                     &lt;huegogh /&gt; 
