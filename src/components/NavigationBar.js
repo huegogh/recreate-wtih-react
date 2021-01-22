@@ -20,7 +20,7 @@ const Styles = styled.div`
 
 `;
 
-export function NavigationBar() {
+export function NavigationBar(props) {
     return (
         <Styles>
             <Navbar expand="lg">
@@ -32,18 +32,11 @@ export function NavigationBar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Item>
-                            <Nav.Link as={Link}  to="/">Multipage</Nav.Link>
+                       {props.content.map(element =>(
+                           <Nav.Item>
+                            <Nav.Link as={Link}  to={element.path}>{element.linkName}</Nav.Link>
                         </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link as={Link}  to="/about">Hotel</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link as={Link}  to="/contact">Restaurant</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link as={Link}  to="/contact">Business</Nav.Link>
-                        </Nav.Item>
+                            ) )}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
