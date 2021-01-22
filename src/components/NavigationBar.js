@@ -23,7 +23,7 @@ const Styles = styled.div`
 export function NavigationBar(props) {
     return (
         <Styles>
-            <Navbar>
+            <Navbar defaultExpanded expand="md">
                 <Navbar.Brand>
                     <Nav.Link as={Link} to='/'>
                     &lt;huegogh /&gt; 
@@ -34,7 +34,7 @@ export function NavigationBar(props) {
                     <Nav className="ml-auto">
                        {props.content.map(element =>(
                            <Nav.Item>
-                            <Nav.Link as={Link}  to={element.path}>{element.linkName}</Nav.Link>
+                            <Nav.Link className="mx-3 lead" as={Link}  to={element.path}>{element.linkName}</Nav.Link>
                         </Nav.Item>
                             ) )}
                     </Nav>

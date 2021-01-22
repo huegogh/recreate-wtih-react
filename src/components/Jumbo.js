@@ -8,7 +8,7 @@ const Styles = styled.div`
     .jumbo {
         background:url(${backgroundImageTwo});
         color: #ccc;
-        height: calc(100vh - 75px);
+        height: calc(100vh - 72px);
         position: relative;
         z-index: -3;
     }
