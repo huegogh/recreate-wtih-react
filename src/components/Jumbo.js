@@ -23,6 +23,7 @@ const Styles = styled.div`
         margin: 0 auto;
         z-index: -1;
         animation: rotation 10s infinite linear;
+        filter: blur(2px) grayscale(20%);
     }
 
     @keyframes rotation {
@@ -44,6 +45,10 @@ const Styles = styled.div`
         right: 0;
         z-index: -1;
     }
+
+    .white-shadow {
+        filter: drop-shadow(10px 5px 6px gray);
+    }
 `;
 
 export function Jumbo() {
@@ -52,7 +57,7 @@ export function Jumbo() {
             <Jumbotron fluid className='jumbo'>
                 <div className='react-bg'></div>
                 <div className='overlay'></div>
-                <Container className='mt-5'>
+                <Container className='mt-5 white-shadow'>
                     <h1>React Projects</h1>
                     <p>Sites created with React, Bootstrap, and Stylized Components</p>
                 </Container>

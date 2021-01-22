@@ -15,7 +15,7 @@ const Styles = styled.div`
     }
 
     .navbar {
-        background-color: #222;
+        background-color: #000101;
     }
 
 `;
@@ -25,15 +25,15 @@ export function NavigationBar(props) {
         <Styles>
             <Navbar defaultExpanded expand="md">
                 <Navbar.Brand>
-                    <Nav.Link as={Link} to='/'>
+                    <Nav.Link target="_blank" href='https://github.com/huegogh/recreate-wtih-react'>
                     &lt;huegogh /&gt; 
                     </Nav.Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                       {props.content.map(element =>(
-                           <Nav.Item>
+                       {props.content.map((element, i) =>(
+                           <Nav.Item key={i}>
                             <Nav.Link className="mx-3 lead" as={Link}  to={element.path}>{element.linkName}</Nav.Link>
                         </Nav.Item>
                             ) )}
