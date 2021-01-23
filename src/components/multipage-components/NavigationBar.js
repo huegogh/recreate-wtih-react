@@ -13,15 +13,18 @@ const Styles = styled.div`
     }
 `;
 
-export function NavigationBar() {
+export function NavigationBar(props) {
+
+    let { url } = useRouteMatch();
+
     return (
         <Row className="mb-5 fixed-top">
             <Col>
-                <Styles>
-                    <Navbar className="navbar-dark bg-custom">
-                        {/* <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-custom"> */}
-                        <a className="navbar-brand" href="./index.html">
-                            <img
+            <Styles>
+            <Navbar expand="md">
+                <Navbar.Brand>
+                    <Nav.Link as={Link} to ={`${url}`}>
+                    <img
                                 src={Logo}
                                 width="48"
                                 height="48"
@@ -30,65 +33,91 @@ export function NavigationBar() {
                                 loading="lazy"
                             />
                     Takoyaki
-                    </a>
-                        <button
-                            className="navbar-toggler"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav mr-auto">
-                                <li className="nav-item active">
-                                    <a className="nav-link" href="#"
-                                    >Home <span className="sr-only">(current)</span></a
-                                    >
-                                </li>
-                                <li className="nav-item dropdown">
-                                    <a
-                                        className="nav-link dropdown-toggle"
-                                        href="#"
-                                        id="navbarDropdown"
-                                        role="button"
-                                        data-toggle="dropdown"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                    >
-                                        Review Lists
-                  </a>
-                                    <div
-                                        className="dropdown-menu bg-custom"
-                                        aria-labelledby="navbarDropdown"
-                                    >
-                                        <a className="dropdown-item white" href="./Pages/anime.html"
-                                        >Anime List</a
-                                        >
-                                        <div className="dropdown-divider"></div>
-                                        <a className="dropdown-item white" href="./Pages/games.html"
-                                        >Video Game List</a
-                                        >
-                                    </div>
-                                </li>
-                                <li className="nav-item">
-                                    <a
-                                        className="nav-link"
-                                        href="./Pages/contact.html"
-                                        tabIndex="-1"
-                                        aria-disabled="true"
-                                    >Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                        {/* </nav> */}
-                    </Navbar>
-                </Styles>
+                    </Nav.Link>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ml-auto">
+                       {props.content.map((element, i) =>(
+                           <Nav.Item key={i}>
+                            <Nav.Link className="mx-3 lead" as={Link}  to={`${url}${element.path}`}>{element.linkName}</Nav.Link>
+                        </Nav.Item>
+                            ) )}
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+        </Styles>
             </Col>
         </Row>
     );
 }
+
+// <Styles>
+//     <Navbar className="navbar-dark bg-custom">
+//         {/* <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-custom"> */}
+//         <a className="navbar-brand" href="./index.html">
+//             <img
+//                 src={Logo}
+//                 width="48"
+//                 height="48"
+//                 className="d-inline-block align-center"
+//                 alt=""
+//                 loading="lazy"
+//             />
+//                     Takoyaki
+//                     </a>
+//         <button
+//             className="navbar-toggler"
+//             type="button"
+//             data-toggle="collapse"
+//             data-target="#navbarSupportedContent"
+//             aria-controls="navbarSupportedContent"
+//             aria-expanded="false"
+//             aria-label="Toggle navigation"
+//         >
+//             <span className="navbar-toggler-icon"></span>
+//         </button>
+
+//         <div className="collapse navbar-collapse" id="navbarSupportedContent">
+//             <ul className="navbar-nav mr-auto">
+//                 <li className="nav-item active">
+//                     <a className="nav-link" href="#"
+//                     >Home <span className="sr-only">(current)</span></a
+//                     >
+//                 </li>
+//                 <li className="nav-item dropdown">
+//                     <a
+//                         className="nav-link dropdown-toggle"
+//                         href="#"
+//                         id="navbarDropdown"
+//                         role="button"
+//                         data-toggle="dropdown"
+//                         aria-haspopup="true"
+//                         aria-expanded="false"
+//                     >
+//                         Review Lists
+//                                     </a>
+//                     <div
+//                         className="dropdown-menu bg-custom"
+//                         aria-labelledby="navbarDropdown"
+//                     >
+//                         <a className="dropdown-item white" href="./Pages/anime.html"
+//                         >Anime List</a>
+//                         <div className="dropdown-divider"></div>
+//                         <a className="dropdown-item white" href="./Pages/games.html"
+//                         >Video Game List</a>
+//                     </div>
+//                 </li>
+//                 <li className="nav-item">
+//                     <a
+//                         className="nav-link"
+//                         href="./Pages/contact.html"
+//                         tabIndex="-1"
+//                         aria-disabled="true"
+//                     >Contact Us</a>
+//                 </li>
+//             </ul>
+//         </div>
+//         {/* </nav> */}
+//     </Navbar>
+// </Styles> 
