@@ -1,5 +1,4 @@
 import { BackButton } from '../shared-components/BackButton.js';
-import { Layout } from '../shared-components/Layout.js';
 import { NavigationBar } from '../multipage-components/NavigationBar.js';
 import React from 'react';
 import { Route, useRouteMatch, Switch } from 'react-router-dom';
@@ -23,7 +22,6 @@ export function Multipage() {
     return (
         <React.Fragment>
             <NavigationBar content={NavLinks} />
-            <Layout>
                 <Switch>
                     <Route exact path={path} component={Home} />
                     <Route path={`${path}/anime`} component={Anime} />
@@ -31,7 +29,6 @@ export function Multipage() {
                     <Route path={`${path}/contact`} component={Contact} />
                     <Route component={NoMatch} />
                 </Switch>
-            </Layout>
             <BackButton />
         </React.Fragment>
     );
