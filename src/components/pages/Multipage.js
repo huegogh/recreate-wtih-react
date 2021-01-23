@@ -22,17 +22,17 @@ export function Multipage() {
 
     return (
         <React.Fragment>
+            <NavigationBar content={NavLinks} />
             <Layout>
-                <NavigationBar content={NavLinks} />
-                <BackButton />
+                <Switch>
+                    <Route exact path={path} component={Home} />
+                    <Route path={`${path}/anime`} component={Anime} />
+                    <Route path={`${path}/video-games`} component={VideoGames} />
+                    <Route path={`${path}/contact`} component={Contact} />
+                    <Route component={NoMatch} />
+                </Switch>
             </Layout>
-            <Switch>
-                <Route exact path={path} component={Home} />
-                <Route path={`${path}/anime`} component={Anime} />
-                <Route path={`${path}/video-games`} component={VideoGames} />
-                <Route path={`${path}/contact`} component={Contact} />
-                <Route component={NoMatch} />
-            </Switch>
+            <BackButton />
         </React.Fragment>
     );
 }

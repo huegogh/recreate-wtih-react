@@ -1,5 +1,3 @@
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import styled from 'styled-components';
@@ -18,10 +16,8 @@ export function NavigationBar(props) {
     let { url } = useRouteMatch();
 
     return (
-        <Row className="mb-5 fixed-top">
-            <Col>
             <Styles>
-            <Navbar expand="md">
+            <Navbar  className="bg-custom navbar-dark" expand="md">
                 <Navbar.Brand>
                     <Nav.Link as={Link} to ={`${url}`}>
                     <img
@@ -47,8 +43,6 @@ export function NavigationBar(props) {
                 </Navbar.Collapse>
             </Navbar>
         </Styles>
-            </Col>
-        </Row>
     );
 }
 
