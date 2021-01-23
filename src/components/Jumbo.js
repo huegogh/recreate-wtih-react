@@ -51,15 +51,14 @@ const Styles = styled.div`
     }
 `;
 
-export function Jumbo() {
+export function Jumbo(props) {
     return (
         <Styles className="mb-n5">
             <Jumbotron fluid className='jumbo'>
                 <div className='react-bg'></div>
                 <div className='overlay'></div>
                 <Container className='mt-5 white-shadow'>
-                    <h1>React Projects</h1>
-                    <p>Sites created with React, Bootstrap, and Stylized Components</p>
+                    {props.children}
                 </Container>
             </Jumbotron>
         </Styles>
