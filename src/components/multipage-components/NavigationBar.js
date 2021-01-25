@@ -25,7 +25,7 @@ export function NavigationBar(props) {
                                 width="48"
                                 height="48"
                                 className="d-inline-block align-center"
-                                alt=""
+                                alt="Takoyaki Logo"
                                 loading="lazy"
                             />
                     Takoyaki
