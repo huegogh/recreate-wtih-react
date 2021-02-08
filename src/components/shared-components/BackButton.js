@@ -8,6 +8,11 @@ const StickToBottom = styled.div`
         position: fixed;
         bottom: -4px;
         right: 20px;
+        opacity: .6 !important;
+    
+        &:hover {
+            opacity: 1 !important;
+        }
     }
     
 `;
