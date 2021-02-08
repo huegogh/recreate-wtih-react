@@ -14,35 +14,59 @@ const Styles = styled.div`
         background: url(${BlueBG}) repeat top;
         min-height: calc(100vh - 144px);
     }
+
+    .text-overlay {
+        background-color: #ffffffaa;
+        position: relative;
+        right: 0;
+        left: 0;
+        top: 250px;
+        z-index: 1;
+    }
+
+    .carousel {
+        z-index: 0;
+    }
 `;
 
 export function Home() {
     return (
         <Styles>
-            <Layout className="bg-blue px-0 py-3">
+            <Layout className="bg-blue px-0 py-3  d-flex align-items-center justify-content-center">
                 <Row>
                     <Col>
-                        <Carousel>
+                        <Layout className='text-overlay w-50'>
+                            <h1>
+                                Takoyaki
+                            </h1>
+                            <h2>
+                                Video Game and Anime Reviews
+                            </h2>
+                        </Layout>
+                        <Carousel className="carousel">
                             <Carousel.Item>
                                 <img
-                                    className="d-block w-75 mx-auto"
+                                    className="d-block mx-auto"
                                     src={BoW}
                                     alt="First slide"
+                                    width="75%"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
-                                    className="d-block w-75 mx-auto"
+                                    className="d-block mx-auto"
                                     src={DS}
                                     alt="Third slide"
+                                    width="75%"
                                 />
 
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
-                                    className="d-block w-75 mx-auto"
+                                    className="d-block mx-auto"
                                     src={ReZ}
                                     alt="Third slide"
+                                    width="75%"
                                 />
 
                             </Carousel.Item>
