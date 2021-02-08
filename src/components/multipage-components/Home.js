@@ -7,7 +7,6 @@ import DS from '../../assets/multipage-assets/demonSlayer.jpg';
 import ReZ from '../../assets/multipage-assets/reZeroWebsite.jpg';
 import styled from 'styled-components';
 import BlueBG from '../../assets/multipage-assets/Watercolor.png';
-import { Footer } from '../multipage-components/Footer.js';
 
 const Styles = styled.div`
     .bg-blue {
@@ -17,10 +16,8 @@ const Styles = styled.div`
 
     .text-overlay {
         background-color: #ffffffaa;
-        position: relative;
-        right: 0;
-        left: 0;
-        top: 250px;
+        position: absolute;
+        top: 50%;
         z-index: 1;
     }
 
@@ -32,49 +29,58 @@ const Styles = styled.div`
 export function Home() {
     return (
         <Styles>
-            <Layout className="bg-blue px-0 py-3  d-flex align-items-center justify-content-center">
+            <Layout className="bg-blue px-0  d-flex align-items-center justify-content-center">
                 <Row>
                     <Col>
-                        <Layout className='text-overlay w-50'>
-                            <h1>
-                                Takoyaki
+                        <Layout>
+                            <Row className='d-flex justify-content-center'>
+                                <Col className='text-overlay text-center w-50'>
+                                    <h1>
+                                        Takoyaki
                             </h1>
-                            <h2>
-                                Video Game and Anime Reviews
+                                    <h2>
+                                        Video Game and Anime Reviews
                             </h2>
+
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+
+                                    <Carousel className="carousel">
+                                        <Carousel.Item>
+                                            <img
+                                                className="d-block mx-auto"
+                                                src={BoW}
+                                                alt="First slide"
+                                                width="75%"
+                                            />
+                                        </Carousel.Item>
+                                        <Carousel.Item>
+                                            <img
+                                                className="d-block mx-auto"
+                                                src={DS}
+                                                alt="Third slide"
+                                                width="75%"
+                                            />
+
+                                        </Carousel.Item>
+                                        <Carousel.Item>
+                                            <img
+                                                className="d-block mx-auto"
+                                                src={ReZ}
+                                                alt="Third slide"
+                                                width="75%"
+                                            />
+
+                                        </Carousel.Item>
+                                    </Carousel>
+                                </Col>
+                            </Row>
                         </Layout>
-                        <Carousel className="carousel">
-                            <Carousel.Item>
-                                <img
-                                    className="d-block mx-auto"
-                                    src={BoW}
-                                    alt="First slide"
-                                    width="75%"
-                                />
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block mx-auto"
-                                    src={DS}
-                                    alt="Third slide"
-                                    width="75%"
-                                />
-
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block mx-auto"
-                                    src={ReZ}
-                                    alt="Third slide"
-                                    width="75%"
-                                />
-
-                            </Carousel.Item>
-                        </Carousel>
                     </Col>
                 </Row>
             </Layout>
-            <Footer />
         </Styles>
     );
 }

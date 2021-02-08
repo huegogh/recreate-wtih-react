@@ -7,6 +7,7 @@ import { Anime } from '../multipage-components/Anime.js';
 import { VideoGames } from '../multipage-components/VideoGames.js';
 import { Contact } from '../multipage-components/Contact.js';
 import { NoMatch } from './NoMatch.js';
+import { Footer } from '../multipage-components/Footer.js';
 
 
 export function Multipage() {
@@ -29,6 +30,7 @@ export function Multipage() {
                     <Route path={`${path}/contact`} component={Contact} />
                     <Route component={NoMatch} />
                 </Switch>
+                <Footer />
             <BackButton />
         </React.Fragment>
     );
