@@ -41,8 +41,8 @@ export function MediaEntry(props) {
                         ></iframe>
                     </div>
                 </Row>
-            </Col>
             <hr />
+            </Col>
         </Row>
     );
 }
