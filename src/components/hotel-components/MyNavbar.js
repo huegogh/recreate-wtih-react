@@ -9,6 +9,17 @@ const Styles = styled.div`
     .bg-custom {
         background-color: #000324;
     }
+
+    .nav-link {
+        color: white !important;
+        margin-left: 4px;
+        margin-right: 4px;
+        padding-bottom: 0;
+    }
+    
+    .nav-link:hover {
+        border: 2px solid white;
+    }
 `;
 
 export function MyNavbar(props) {
@@ -23,17 +34,16 @@ export function MyNavbar(props) {
                         <Navbar.Brand className='d-md-none'>La Petite Maison</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse
-                            id="basic-navbar-nav">
+                            id="basic-navbar-nav"
+                            className="text-white">
                             <Nav className="mx-auto d-flex align-items-end">
                                 <Nav.Link href="#overview">Overview</Nav.Link>
                                 <Nav.Link href="#rooms">Rooms</Nav.Link>
                                 <Nav.Link href="#packages">Packages</Nav.Link>
-                                <Nav.Link>
                                     <img
                                     src={Logo}
                                     className="d-none d-md-block"
                                     alt="Logo of La Petite Maison" />
-                                </Nav.Link>
                                 <Nav.Link href="#amenities">Amenities</Nav.Link>
                                 <Nav.Link href="#contact">Contact</Nav.Link>
                                 <Nav.Link href="#reserve">Reserve</Nav.Link>
