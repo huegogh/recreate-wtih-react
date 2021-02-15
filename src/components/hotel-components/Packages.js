@@ -11,7 +11,7 @@ const Styles = styled.div`
 
 export function Packages(props) {
     return (
-        <Styles>
+        <Styles id="packages">
             <Row className='my-3'>
       <Col>
         <h2 className="text-center">
