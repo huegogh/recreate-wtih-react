@@ -11,7 +11,7 @@ const Styles = styled.div`
     }
 
     .nav-link {
-        color: white !important;
+        color: #E5FEFF !important;
         margin-left: 4px;
         margin-right: 4px;
         padding-bottom: 0;
